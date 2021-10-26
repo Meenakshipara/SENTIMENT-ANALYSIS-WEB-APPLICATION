@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}Twitter Sentimental Analysis{% endblock %}</title>
+    <style>
+    body
+    {
+        background-image:url("/static/wallpaper41.png");
+        background-attachment: fixed;
+    }
+    .btn
+    {
+        border: 4px solid black;
+        background-color: white;
+        color: black;
+        padding: 50px 25px;
+        font-size: 18px;
+        cursor: pointer;
+        border-color: black;
+    }
+    
+    .button1
+    {
+        background-color: white; 
+        color: black; 
+        border: 4px solid #696969;
+    }
+
+    .button1:hover
+    {
+        background-color: #6495ED;
+        color: white;
+    }
+    input[type=submit]
+    {
+        background-color: white;
+        border-color: #696969;
+        color: black;
+        padding: 16px 32px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .form1
+    {
+        position:absolute;
+        left:10%;
+        top:30%;
+        background-color : white;
+    }
+    .form2
+    {
+        position:absolute;
+        left:10%;
+        top:90%;
+    }
+    .ha3
+    {
+        position:absolute;
+        width:500px;
+        height:400px;
+        left:50%;
+        top:30%;
+    }
+</style>
+</head>
+<body>
+    {% block content %}
+    <h1 align="center" style="color:black;font-size:60px;">TWITTER SENTIMENT ANALYZER<h1>
+    <form align = "center" action="#" method="post">
+        <br><br>
+        <textarea rows="10" cols ="40" name="op" placeholder="Enter a keyword of your tweet!!!"></textarea>
+        <br><br>
+        <input type="submit" value="PREDICT" class="btn button1" style = "font-size:20px;font-weight:bold;position:absolute;left:40%;top:57%">
+    </form>
+    <a href="/back"><button class="btn button1" style = "padding :17.5px 17.5px;font-weight:bold;position:absolute;left:55%;top:57%"><b>BACK</b></button></a>
+    {% endblock content %}
+</body>
+</html>

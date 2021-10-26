@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}Text Analysis{% endblock %}</title>
+    <style>
+    body
+    {
+        background-image:url("/static/wallpaper41.png");
+        background-attachment: fixed;
+    }
+    .form1
+    {
+        position:absolute;
+        left:30%;
+        top:25%;
+        background-color : white;
+    }
+    .form2
+    {
+        position:absolute;
+        left:50%;
+        top:85%;
+    }
+    .ha3
+    {
+        position:absolute;
+        left:40%;
+        top:40%;
+        padding: 50px 25px;
+        background-color : none;
+    }
+    img
+    {
+        width: 300px;
+        height: 250px;
+        display: block; 
+    }
+    .btn
+    {
+        border: 4px solid black;
+        background-color: white;
+        color: black;
+        padding: 50px 25px;
+        font-size: 18px;
+        cursor: pointer;
+        border-color: black;
+    }
+    
+    .button1
+    {
+        background-color: white; 
+        color: black; 
+        border: 4px solid #696969;
+    }
+
+    .button1:hover
+    {
+        background-color: #6495ED;
+        color: white;
+    }
+</style>
+</head>
+<body>
+    {% block content %}
+    <h1 align="center" style="color:black;font-size:60px;">PREDICTED RESULT<h1>
+    <div class ="form1" style="width:700px;height:100px;">Your text is {{value1}} % {{value2}}</div>
+    <div class = "ha3" style="width:400px;height:500px;">
+    {% if value2 == "Positive" %}
+        <img src="{{url_for('static', filename='h.png')}}"/>
+    {% elif value2 == "Neutral" %}
+        <img src="{{url_for('static', filename='neu.png')}}"/>
+    {% elif value2 == "Negative" %}
+        <img src="{{url_for('static', filename='n.png')}}"/>
+    {% endif %}
+    </div>
+    <a href="/back" class = "form2"><button class="btn button1" style = "padding : 17px 17px"><b>BACK</b></button></a>
+    {% endblock content %}
+</body>
+</html>

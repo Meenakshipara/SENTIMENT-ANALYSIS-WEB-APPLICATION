@@ -1,0 +1,30 @@
+{% extends "login2.html" %} 
+{% block title %}Twitter Analysis{% endblock %}
+{% block content %}
+<div class ="ha3" id="chartContainer"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<h3 align="center" style="color:black;font-size:60px;">PREDICTED RESULT<h3>
+<div class ="form1" style="width:500px;height:400px;border:1px solid #000;">{{value3}}</div>
+<a class = "form2" href="/back"><button class="btn button1" style = "padding : 18px 18px"><b>BACK</b></button></a>
+<script>
+window.onload = function()
+{
+    var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	data:
+    [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints:
+		[
+			{y: {{value1}}, label: "Positive tweets"},
+			{y: {{value2}}, label: "Negative tweets"}
+		]
+	}]
+});
+chart.render();
+}
+</script>
+{% endblock content %}
